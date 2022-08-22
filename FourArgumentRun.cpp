@@ -1,6 +1,6 @@
 #include <iostream>
 #include <fstream>
-#include "olo.h"
+#include "FourArgumentRun.h"
 
 using std::cout;
 using std::cin;

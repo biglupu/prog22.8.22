@@ -18,7 +18,7 @@ void basicRun(int argCee, string yksi, string kaksi)
     string found_w;
     bool found = 0;
     string line;
-    int count = 1;
+    
     bool printed = 0;
 
 
@@ -42,12 +42,12 @@ void basicRun(int argCee, string yksi, string kaksi)
                         printed = 1;
                     }
                     cout << line << endl;
-                    count++;
+                    
                     found = 1;
 
                 }
-                else
-                    count++;
+                
+                    
             }
 
             if (found == 0)

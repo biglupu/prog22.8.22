@@ -24,7 +24,7 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="olo.cpp">
+    <ClCompile Include="FourArgumentRun.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="print.cpp">
@@ -38,7 +38,7 @@
     <ClInclude Include="basicRun.h">
       <Filter>Source Files</Filter>
     </ClInclude>
-    <ClInclude Include="olo.h">
+    <ClInclude Include="FourArgumentRun.h">
       <Filter>Source Files</Filter>
     </ClInclude>
     <ClInclude Include="print.h">

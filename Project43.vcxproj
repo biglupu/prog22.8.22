@@ -142,14 +142,14 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="commandCenter.cpp" />
     <ClCompile Include="basicRun.cpp" />
-    <ClCompile Include="olo.cpp" />
+    <ClCompile Include="FourArgumentRun.cpp" />
     <ClCompile Include="print.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="commandCenter.h" />
     <ClInclude Include="basicRun.h" />
     <ClInclude Include="print.h" />
-    <ClInclude Include="olo.h" />
+    <ClInclude Include="FourArgumentRun.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
