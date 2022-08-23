@@ -32,10 +32,11 @@ void doingStuff(int argCee, string yksi, string kaksi, string kolme)
 	cout << "Additional command line arguments: \n";
 	cout << "\"" << yksi << "\"" << ", \"" << kaksi << "\"" << ", \"" << kolme << "\"" << endl << endl;
 
-
-	if (yksi == "-olo")
-		olo(argCee, yksi, kaksi, kolme);
-
+	if (yksi.front() == '-')
+		IVargumentRun(argCee, yksi, kaksi, kolme);
+	//Exception handling?
+	else
+		cout << "ERROR\nYou must specify the desired run option. \nFor example use \"-olo\" for Occurances and Line number. \nUse \"help\" or \"options\" commands to see the documentation"<< endl;
 
 }
 

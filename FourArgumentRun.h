@@ -4,4 +4,4 @@
 #include <iostream>
 using namespace std;
 
-void olo(int, string, string, string);
+void IVargumentRun(int, string, string, string);

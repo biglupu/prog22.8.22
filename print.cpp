@@ -10,7 +10,7 @@ void printHelp()
 
 
 	std::cout << "An example of run without arguments: ";
-	std::cout << "\n.mygrep.exe\n\n";
+	std::cout << "\nmygrep.exe\n\n";
 	std::cout << "\"Give a string from which to search for: Erkki Hietalahti\n\"";
 	std::cout << "\"Give search string : rkkk\n";
 	std::cout << "\"rkki \"found in \"Erkki Hietalahti\" in position 1";
@@ -30,7 +30,7 @@ void printOptions()
 	std::cout << "\nOther than the \"options\" and \"help\" -functions, operational acronyms" << std::endl;
 	std::cout << "start with \"-o\" to clarify that it's a run option." << std::endl;
 	std::cout << "When refering to for example LINENUMBER command, which is writen as \"-ol\"" << std::endl;
-	std::cout << "the document will refer to it as \"l\", with the \"-o\" being implied" << std::endl;
+	std::cout << "the document will refer to it as \"l\", with the \"-o\" being implied\n" << std::endl;
 	std::cout << "Example use of LINENUMBER -function writen on the terminal: ";
 	std::cout << std::endl;
 	std::cout << "\nmygrep.exe -ol Search_Word Search_File.txt\n" << std::endl;
