@@ -27,13 +27,18 @@ void IVargumentRun(int argCee, string yksi, string kaksi, string kolme)
     int reverseSearch = -2;
     int ignoreCase = -2;
 
+    cout << yksi << endl;
+    yksi.erase(0, 2);
+    cout << yksi << endl;
+    
+
     lineNumb = (yksi.find("l"));
     if (lineNumb == -1)
         cout << endl;
     
     else
     {
-        cout << "\nLine numbers ";
+        cout << "Line numbers ";
         lineNumb = 1;
     }
 
@@ -43,7 +48,7 @@ void IVargumentRun(int argCee, string yksi, string kaksi, string kolme)
     
     else
     {
-        cout << "\nOccurances ";
+        cout << "Occurances ";
         occurance = 1;
     }
 
@@ -53,7 +58,7 @@ void IVargumentRun(int argCee, string yksi, string kaksi, string kolme)
     
     else
     {
-        cout << "\nReverse search ";
+        cout << "Reverse search ";
         reverseSearch = 1;
     }
 
@@ -64,7 +69,7 @@ void IVargumentRun(int argCee, string yksi, string kaksi, string kolme)
     else
     {
         ignoreCase = 1;
-        cout << "\nIgnoring cases ";
+        cout << "Ignoring cases ";
     }
 
 

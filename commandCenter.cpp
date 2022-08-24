@@ -32,7 +32,7 @@ void doingStuff(int argCee, string yksi, string kaksi, string kolme)
 	cout << "\nCommand line arguments: \n";
 	cout << "\"" << yksi << "\"" << ", \"" << kaksi << "\"" << ", \"" << kolme << "\"" << endl << endl;
 
-	if (yksi.front() == '-o') //toimiiko kahella? oli aikaisemmin " == '-' "
+	if (yksi[0] == '-' && yksi[1]== 'o')
 		IVargumentRun(argCee, yksi, kaksi, kolme);
 	//Exception handling?
 	else
