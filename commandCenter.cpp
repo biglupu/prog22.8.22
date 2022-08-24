@@ -28,11 +28,11 @@ void doingStuff(string yksi, string kaksi)
 void doingStuff(int argCee, string yksi, string kaksi, string kolme)
 {
 	//should run koska 3 parametria
-	cout << "\nArgument count: " << argCee << endl;
-	cout << "Additional command line arguments: \n";
+	/*cout << "\nArgument count: " << argCee << endl;*/
+	cout << "\nCommand line arguments: \n";
 	cout << "\"" << yksi << "\"" << ", \"" << kaksi << "\"" << ", \"" << kolme << "\"" << endl << endl;
 
-	if (yksi.front() == '-')
+	if (yksi.front() == '-o') //toimiiko kahella? oli aikaisemmin " == '-' "
 		IVargumentRun(argCee, yksi, kaksi, kolme);
 	//Exception handling?
 	else
@@ -61,7 +61,7 @@ void doingStuff(int argCee, string yksi)
 
 void doingStuff(int argCee, string yksi, string kaksi)
 {
-	cout << "Argument count, " << argCee << endl;
+	/*cout << "Argument count, " << argCee << endl;*/
 	cout << "Command line arguments: \n";
 	cout << "\"" << yksi << "\"" << ", \"" << kaksi << "\"" << endl;
 	basicRun(argCee, yksi, kaksi);

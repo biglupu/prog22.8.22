@@ -11,6 +11,7 @@ using std::ifstream;
 
 
 
+
 void IVargumentRun(int argCee, string yksi, string kaksi, string kolme)
 {
     ifstream inputFile;
@@ -21,52 +22,61 @@ void IVargumentRun(int argCee, string yksi, string kaksi, string kolme)
     string line;
     int count = 1;
     bool printed = 0;
-
-    //Split to another cpp?
     int occurance = -2;
     int lineNumb = -2;
     int reverseSearch = -2;
     int ignoreCase = -2;
 
-    cout << reverseSearch;
-
     lineNumb = (yksi.find("l"));
     if (lineNumb == -1)
-        cout << "\nNo Line numbers";
+        cout << endl;
+    
     else
-        cout << "\nFound in position " << lineNumb;
+    {
+        cout << "\nLine numbers ";
+        lineNumb = 1;
+    }
 
     occurance = (yksi.find("o"));
     if (occurance == -1)
-        cout << "\nNo occurances";
+        cout << endl;
+    
     else
-        cout << "\nFound in position " << occurance;
+    {
+        cout << "\nOccurances ";
+        occurance = 1;
+    }
 
     reverseSearch = (yksi.find("r"));
     if (reverseSearch == -1)
-        cout << "\nNo reverse search";
+        cout << endl;
+    
     else
-        cout << "\nFound in position " << reverseSearch;
+    {
+        cout << "\nReverse search ";
+        reverseSearch = 1;
+    }
 
     ignoreCase = (yksi.find("i"));
     if (ignoreCase == -1)
-        cout << "\nNot ignoring cases";
+        cout << endl;
+    
     else
-        cout << "\nFound in position " << ignoreCase;
-    //end 
-
-    if (argCee > 1)
     {
+        ignoreCase = 1;
+        cout << "\nIgnoring cases ";
+    }
 
+
+
+
+    {
+        //Tähän sisään "Ignore case", "reverse search", "line number" ja "occurances" if -lauseina. 
         search_w = kaksi;
         filename = kolme;
-        
+
         inputFile.open(filename);
         if (inputFile)
-            //Tähän sisään "Ignore case", "reverse search", "line number" ja "occurances" if -lauseina. 
-
-
-
 
         {
             while (getline(inputFile, line))
@@ -76,10 +86,14 @@ void IVargumentRun(int argCee, string yksi, string kaksi, string kolme)
                 {
                     if (printed == 0)
                     {
-                        cout << "\nString \"" << search_w << "\" found on the lines:\n\n";
+                        cout << "\nString \"" << search_w << "\" found on the lines:\n";
                         printed = 1;
                     }
-                    cout << count << ": " << line << endl << endl;
+                    if (lineNumb == 1)
+                    {
+                        cout << count << ": ";
+                    }
+                    cout << line << endl;
                     count++;
                     found = 1;
 
@@ -99,5 +113,7 @@ void IVargumentRun(int argCee, string yksi, string kaksi, string kolme)
             cout << "Error, couldn't read file: " << filename;
     }
 }
+
+
 
 
