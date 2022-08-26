@@ -18,7 +18,8 @@ void IVargumentRun(int argCee, string yksi, string kaksi, string kolme)
     string filename;
     string search_w;
     string found_w;
-    bool found = 0;
+    int found = 0;
+    int unfound = 0;
     string line;
     int count = 1;
     bool printed = 0;
@@ -27,56 +28,38 @@ void IVargumentRun(int argCee, string yksi, string kaksi, string kolme)
     int reverseSearch = -2;
     int ignoreCase = -2;
 
-    cout << yksi << endl;
+    /*cout << yksi << endl;*/
     yksi.erase(0, 2);
-    cout << yksi << endl;
     
-
     lineNumb = (yksi.find("l"));
-    if (lineNumb == -1)
-        cout << endl;
-    
-    else
+    if (lineNumb != -1)
     {
         cout << "Line numbers ";
         lineNumb = 1;
     }
 
     occurance = (yksi.find("o"));
-    if (occurance == -1)
-        cout << endl;
-    
-    else
+    if (occurance != -1)
     {
         cout << "Occurances ";
         occurance = 1;
     }
 
     reverseSearch = (yksi.find("r"));
-    if (reverseSearch == -1)
-        cout << endl;
-    
-    else
+    if (reverseSearch != -1)
     {
         cout << "Reverse search ";
         reverseSearch = 1;
     }
 
     ignoreCase = (yksi.find("i"));
-    if (ignoreCase == -1)
-        cout << endl;
-    
-    else
+    if (ignoreCase != -1)
     {
         ignoreCase = 1;
         cout << "Ignoring cases ";
     }
+    cout << ":" << endl;
 
-
-
-
-    {
-        //Tähän sisään "Ignore case", "reverse search", "line number" ja "occurances" if -lauseina. 
         search_w = kaksi;
         filename = kolme;
 
@@ -86,37 +69,89 @@ void IVargumentRun(int argCee, string yksi, string kaksi, string kolme)
         {
             while (getline(inputFile, line))
             {
-
-                if (line.find(search_w) != -1)
+                
+                if (reverseSearch != 1)
                 {
-                    if (printed == 0)
+                    
+                    if (line.find(search_w) != -1)
                     {
-                        cout << "\nString \"" << search_w << "\" found on the lines:\n";
-                        printed = 1;
+                        if (printed == 0)
+                        {
+                            cout << "\nString \"" << search_w << "\" found on the lines:\n";
+                            printed = 1;
+                        }
+                        if (lineNumb == 1)
+                        {
+                            cout << count << ": ";
+                        }
+                        cout << line << endl;
+                        count++;
+                        found++;
+
                     }
-                    if (lineNumb == 1)
+                    else
+                        count++;                
+               
+                }
+                if (reverseSearch == 1)
+                {
+                    
+                    if (line.find(search_w) == -1)
                     {
-                        cout << count << ": ";
+                        if (printed == 0)
+                        {
+                            cout << "\nString \"" << search_w << "\" not present on the lines:\n";
+                            printed = 1;
+                        }
+                        if (lineNumb == 1)
+                        {
+                            cout << count << ": ";
+                        }
+                        cout << line << endl;
+                        count++;
+                        unfound++;
+                        
+
                     }
-                    cout << line << endl;
-                    count++;
-                    found = 1;
+                    else
+                        count++;
+                    
+                }
+            }
+            cout << "\nClosing file\n";
+            inputFile.close();
+
+            if (reverseSearch == 1)
+            {
+                /*cout << found << " " << count << " " << unfound <<endl;*/
+                found = count - unfound - 1;
+                // -1 koska ensimmäinen rivi on rivi numero 1, eikä rivi numero 0. 
+                //Note to self, "++":aa line ENNEN sen printtausta jatkossa
+            }
+            if (occurance == 1)
+            {
+                if (found > 0)
+                {
+                    if (reverseSearch != 1)
+                        cout << "Occurrences of lines containing \"" << search_w << "\" : " << found;
+                    else
+                    {
+                        cout << "Occurrences of lines containing \"" << search_w << "\" : " << found;
+                        cout << "\nOccurrences of lines NOT containing \"" << search_w << "\" : " << unfound;
+                        
+                    }
+
 
                 }
                 else
-                    count++;
+                    cout << "Word \"" << search_w << "\" not found in file: " << filename;
             }
-
-            if (found == 0)
-            {
-                cout << "Word \"" << search_w << "\" not found in file: " << filename;
-            }
-
-            inputFile.close();
         }
+
+
         else
             cout << "Error, couldn't read file: " << filename;
-    }
+
 }
 
 
